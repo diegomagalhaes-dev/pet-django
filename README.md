@@ -15,3 +15,7 @@ $ docker-compose up --build
 $ sudo chown -R $USER:$USER .
 
 ```
+
+### Importante
+
+- **necessários Docker e docker-compose instalados na sua máquina**
