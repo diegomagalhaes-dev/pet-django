@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # local
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
+    'products.apps.ProductsConfig'
 ]
 
 AUTH_USER_MODEL = "users.User"
@@ -116,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -139,7 +140,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 SITE_ID = 1
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/products"
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_USERNAME_REQUIRED = False
@@ -149,3 +150,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 # crispy-forms
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+# Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
