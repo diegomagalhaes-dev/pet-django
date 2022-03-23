@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="about">
+  <p> Somos três estudantes do curso de Ciências da Computação do <br>Instituto Federal do Ceará -IFCE, campus
+    Tianguá-CE</p>
+</div>
+{% endif %}
+{% endblock %}

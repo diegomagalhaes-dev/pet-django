@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title%} Lista de clientes{% endblock%}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="nav-bnt">
+    <button class="bnt "><a href="{% url 'pshop:create_cliente' %}"> Adicionar Cliente</a></button>
+</div>
+<h1 class="Lcad">Clientes cadastrados</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>CPF</th>
+            <th>Contato</th>
+            <th>Email</th>
+            <th>Rua</th>
+            <th>N°</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in object_list %}
+        <tr>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.CPF}}</td>
+            <td>{{cliente.telefone}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.rua}}</td>
+            <td>{{cliente.numero}}</td>
+            <td>{{cliente.bairro}}</td>
+            <td>{{cliente.cidade}}</td>
+            <td><button class="bnt"><a href="{% url 'pshop:update_cliente' pk=cliente.id %}">Editar</a></button></td>
+            <td><button class="bnt"><a href="{% url 'pshop:delete_cliente' pk=cliente.id %}">Deletar</a></button></td>
+        </tr>
+        {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

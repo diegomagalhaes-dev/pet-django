@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}Cadastrar/Editar pet{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1 class="Lcad">Cadastrar / atualizar pet</h1>
+
+<form class="frm-update" action="" method="post">
+    {% csrf_token %}
+    {{form|bootstrap}}
+    <div class="form-bnt" id="serv">
+        <button class="bnt" type="reset"><a href="{% url 'pshop:list_servico' %}">Cancelar</a></button>
+        <button class="bnt" type="submit"> Salvar</button>
+    </div>
+
+</form>
+
+{% endif %}
+{% endblock %}

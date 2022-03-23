@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title%} Lista de serviços{% endblock%}
+
+{% block content %}
+{% if user.is_authenticated %}
+<table class="table table-striped">
+    <tr>
+        <th>data</th>
+        <th>formaPag</th>
+        <th>TipoServico</th>
+        <th>cliente</th>
+        <th>pet</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>{{servico.data}}</td>
+        <td>{{servico.formaPag}}</td>
+        <td>{{servico.TipoServico}}</td>
+        <td>{{servico.cliente}}</td>
+        <td>{{servico.pet}}</td>
+    </tr>
+</table>
+<form class="bt" action="." method="post">
+    {% csrf_token %}
+    <div class="form-bnt">
+        <p>Deseja realmente excluir este pet?</p>
+        <button class="bnt" type="reset"><a href="{% url 'pshop:list_servico' %}">NÃO</a></button>
+        <button class="bnt" type="submit">SIM</button>
+    </div>
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title%} Lista de Pets{% endblock%}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="nav-bnt">
+    <button class="bnt "><a href="{% url 'pshop:create_pet' %}"> Adicionar Pet</a></button>
+</div>
+<h1 class="Lcad">Pets cadastrados</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Sexo</th>
+            <th>Raça</th>
+            <th>Porte</th>
+            <th>Idade</th>
+            <th>Tipo</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pet in object_list %}
+        <tr>
+            <td>{{pet.nome}}</td>
+            <td>{{pet.sexo}}</td>
+            <td>{{pet.raca}}</td>
+            <td>{{pet.porte}}</td>
+            <td>{{pet.idade}}</td>
+            <td>{{pet.tipo}}</td>
+            <td><button class="bnt"><a href="{% url 'pshop:update_pet' pk=pet.id %}">Editar</a></button></td>
+            <td><button class="bnt"><a href="{% url 'pshop:delete_pet' pk=pet.id %}">Deletar</a></button></td>
+        </tr>
+        {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

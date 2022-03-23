@@ -1,25 +1,11 @@
 version: "3.8"
 
 services:
-  db:
-    build: ./docker/postgres
-    restart: always
-    container_name: petstore_db
-    tty: true
-    ports:
-      - 2345:5432
-    volumes:
-      - ./docker/dbdata:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=petstore_db
   app:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
-    container_name: petstore
+    container_name: petshop
     volumes:
       - .:/code
     ports:
       - "8000:8000"
-    depends_on:
-      - db

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title%} Lista de serviços{% endblock%}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="nav-bnt">
+    <button class="bnt "><a href="{% url 'pshop:create_servico' %}"> Adicionar Serviço</a></button>
+</div>
+<h1 class="Lcad">Lista de serviços</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Forma de pag</th>
+            <th>Tipo Serviço</th>
+            <th>Cliente</th>
+            <th>Pet</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for servico in object_list %}
+        <tr>
+            <td>{{servico.data}}</td>
+            <td>{{servico.formaPag}}</td>
+            <td>{{servico.TipoServico}}</td>
+            <td>{{servico.cliente}}</td>
+            <td>{{servico.pet}}</td>
+            <td><button class="bnt"><a href="{% url 'pshop:update_servico' pk=servico.id %}">Editar</a></button></td>
+            <td><button class="bnt"><a href="{% url 'pshop:delete_servico' pk=servico.id %}">Deletar</a></button></td>
+        </tr>
+        {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

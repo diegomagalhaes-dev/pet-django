@@ -1,0 +1,113 @@
+.navbar{
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.bnt{
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+.nav-bnt{
+    display: flex;
+    justify-content: right;
+    margin-right: 100px;
+    margin-top: 30px;
+    height: 50px;
+}
+
+.container ul{
+    display: flex;
+    justify-content: end;
+}
+
+.nav-item .nav-link{
+    font-weight: bold;
+}
+
+.bnt a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+.Lcad{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+footer{
+    border-top: 2px solid rgb(199, 194, 194);
+    margin-top: 50px;
+    background-color: rgb(236, 236, 236);
+    height: 100px;
+}
+
+.footer-div{
+    margin-top: 2%;
+    text-align: center;
+    font-size: 15px;
+  
+}
+
+.frm-update{
+    margin: auto;
+    width: 500px;
+    border: 5px;
+}
+
+.form-bnt{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.form-bnt p{
+    font-size: 20px;
+}
+
+.form-bnt .bnt{
+    width: 150px;
+    height: 40px;
+    color: rgb(12, 113, 245);
+}
+
+#serv{
+    margin-top: 22%;
+}
+
+#fpet{
+    margin-top: 10%;
+}
+
+.bt{
+    margin-top: 19%;
+
+}
+
+.index{
+    margin-top: 5.5%;
+    margin-bottom: 5.5%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.about{
+
+    margin-top: 15%;
+    margin-bottom: 19%;
+    border-top:  solid 1.5px #000000;
+    border-bottom:  solid 1.5px #000000;
+    background-color: #9acd32;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+}

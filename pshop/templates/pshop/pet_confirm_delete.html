@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title%} Deletar de Pets{% endblock%}
+
+{% block content %}
+{% if user.is_authenticated %}
+<table class="table table-striped">
+    <tr>
+        <th>Nome</th>
+        <th>Sexo</th>
+        <th>Raça</th>
+        <th>Porte</th>
+        <th>Idade</th>
+        <th>Tipo</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>{{pet.nome}}</td>
+        <td>{{pet.sexo}}</td>
+        <td>{{pet.raca}}</td>
+        <td>{{pet.porte}}</td>
+        <td>{{pet.idade}}</td>
+        <td>{{pet.tipo}}</td>
+    </tr>
+</table>
+<form class="bt" action="." method="post">
+    {% csrf_token %}
+    <div class="form-bnt">
+        <p>Deseja realmente excluir este pet?</p>
+        <button class="bnt" type="reset"><a href="{% url 'pshop:list_pet' %}">NÃO</a></button>
+        <button class="bnt" type="submit">SIM</button>
+    </div>
+</form>
+{% endif %}
+{% endblock %}

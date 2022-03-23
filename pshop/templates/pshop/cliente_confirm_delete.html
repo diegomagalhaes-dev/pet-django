@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title%}Deletar cliente{% endblock%}
+
+{% block content %}
+{% if user.is_authenticated %}
+<table class="table table-striped">
+    <tr>
+        <th>Cliente</th>
+        <th>CPF</th>
+        <th>Contato</th>
+        <th>Email</th>
+        <th>Rua</th>
+        <th>N°</th>
+        <th>Bairro</th>
+        <th>Cidade</th>
+    </tr>
+    <tr>
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.CPF}}</td>
+        <td>{{cliente.fone}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.rua}}</td>
+        <td>{{cliente.numero}}</td>
+        <td>{{cliente.bairro}}</td>
+        <td>{{cliente.cidade}}</td>
+    </tr>
+</table>
+<form class="bt" action="." method="post">
+    {% csrf_token %}
+    <div class="form-bnt">
+        <p>Deseja realmente excluir este cliente?</p>
+        <button class="bnt" type="reset"><a href="{% url 'pshop:list_cliente' %}">NÃO</a></button>
+        <button class="bnt" type="submit">SIM</button>
+    </div>
+</form>
+{% endif %}
+{% endblock %}
